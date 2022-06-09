@@ -1,5 +1,5 @@
-require_relative "./config/environment"
-require "sinatra/activerecord/rake"
+require_relative './config/environment'
+require 'sinatra/activerecord/rake'
 
 desc "Start our app console"
 task :console do
@@ -9,7 +9,11 @@ task :console do
   Pry.start
 end
 
-desc "Print emoji 100 times"
+desc "Print emojis"
 task :print_emojis do
-  puts "🪰 👾 🐸" * 100
+  100.times do
+    puts "😊😊😊"
+  end
 end
+
+

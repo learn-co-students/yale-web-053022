@@ -1,35 +1,36 @@
-puts "Delete rides!"
-Ride.destroy_all
+require 'faker'
+# Make a bunch of players
 
-puts "Delete drivers!"
-Driver.destroy_all
-puts "Delete passengers!"
-Passenger.destroy_all
+Game.destroy_all
+Review.destroy_all
+Player.destroy_all
 
-# DRIVERS
-
-puts "Creating drivers..."
-
-30.times do
-  Driver.create(name: Faker::FunnyName.name, rating: rand(1..5), years_experience: rand(0..20), car_model: Faker::Vehicle.make_and_model, license_plate: Faker::Vehicle.license_plate)
+50.times do
+  Game.create(
+    title:    Faker::Game.title,
+    genre:    Faker::Game.genre, 
+    platform: Faker::Game.platform,
+    price:    Faker::Number.decimal(l_digits: 2)
+  )
 end
 
-puts "Done creating drivers!"
-
-# PASSENGER
-
-puts "Creating passengers..."
-
-30.times do
-  Passenger.create(name: Faker::FunnyName.name, age: rand(18...105), bio: Faker::Quote.yoda)
+50.times do
+  Player.create(
+    name: Faker::Name.name
+  )
 end
 
-# RIDES
+random_game_id = Game.ids.sample
+random_player_id = Player.ids.sample
 
-puts "Creating rides.."
+3.times do
 
-60.times do
-  Ride.create(passenger_id: Passenger.ids.sample, driver_id: Driver.ids.sample, price: rand(1..5000), distance: rand(1...9000), destination: Faker::Address.full_address, pick_up: Faker::Address.full_address)
+  Review.create(
+    description: Faker::Restaurant.review,
+    rating: rand(0..10),
+    game_id: random_game_id,
+    player_id: random_player_id # has to be different
+  )
+  puts random_player_id += 1
 end
 
-puts "Done creating rides.."

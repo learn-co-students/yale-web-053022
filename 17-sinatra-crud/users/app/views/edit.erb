@@ -1,0 +1,15 @@
+<h1>Edit a user!</h1>
+
+<%# Populate the fields with users current info %>
+<%# Submit a PUT request to the appropriate route with the new info %>
+<%# @user %>
+
+<form method="POST" action="/users/<%=  @user.id %>">
+  <input type="hidden" name="_method" value="PUT">
+
+  <label for="name" >Name</label>
+  <input type="text" name="user[name]" value="<%= @user.name %>">
+  <label for="age">Age</label>
+  <input type="text" name="user[age]" value="<%= @user.age %>">
+  <input type="submit" value="EDIT USER">
+</form>

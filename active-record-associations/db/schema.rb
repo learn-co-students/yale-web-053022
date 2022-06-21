@@ -10,29 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_153355) do
+ActiveRecord::Schema.define(version: 2022_06_09_194536) do
 
-  create_table "drivers", force: :cascade do |t|
+  create_table "games", force: :cascade do |t|
+    t.string "title"
+    t.string "genre"
+    t.string "platform"
+    t.float "price"
+  end
+
+  create_table "players", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
     t.integer "rating"
-    t.integer "years_experience"
-    t.string "car_model"
-    t.string "license_plate"
-  end
-
-  create_table "passengers", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.string "bio"
-  end
-
-  create_table "rides", force: :cascade do |t|
-    t.integer "driver_id"
-    t.integer "price"
-    t.integer "distance"
-    t.string "destination"
-    t.string "pick_up"
-    t.integer "passenger_id"
+    t.integer "game_id"
+    t.integer "player_id"
+    t.index ["game_id"], name: "index_reviews_on_game_id"
+    t.index ["player_id"], name: "index_reviews_on_player_id"
   end
 
 end

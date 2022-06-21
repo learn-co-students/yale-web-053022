@@ -9,11 +9,4 @@ task :console do
   Pry.start
 end
 
-desc "Print emojis"
-task :print_emojis do
-  100.times do
-    puts "😊😊😊"
-  end
-end
-
 

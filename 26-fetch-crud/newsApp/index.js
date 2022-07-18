@@ -3,6 +3,7 @@ const allCards = document.querySelectorAll("div.card");
 const collectionDiv = document.querySelector("div#collection");
 const form = document.querySelector("form#article-form");
 const toggleElement = document.querySelector("input#toggle-dark-mode");
+const URL = "http://localhost:3000/articles";
 
 /* FUNCTIONS */
 
@@ -47,11 +48,20 @@ function createOneCard(articleObject) {
 }
 
 function renderAllCards() {
-  articlesArray.forEach(function (articleObj) {
-    createOneCard(articleObj);
-  });
+  // articlesArray.forEach(function (articleObj) {
+  //   createOneCard(articleObj);
+  // });
 
   // Fetch articles
+  // GET all the articles
+  // fetch(url)
+  //  .then(response=>response.json())
+  //  .then(do something)
+  fetch(URL)
+    .then((response) => response.json())
+    .then((articlesArray) =>
+      articlesArray.forEach((article) => createOneCard(article))
+    );
 }
 
 /* EVENT LISTENERS */
@@ -80,24 +90,57 @@ form.addEventListener("submit", function (event) {
     likes: 0,
   };
 
-  // articlesArray.push(articleObject)
-  // createOneCard(articleObject)
+  // articlesArray.push(articleObject);
+  // createOneCard(articleObject);
   form.reset();
 
+  // POST request
   // create new article on backend
+  // fetch(url)
+  //   .then(response=>response.json())
+  //   .then(do something)
+
+  fetch(URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(articleObject),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      createOneCard(data);
+    });
 });
 
 collectionDiv.addEventListener("click", (event) => {
   if (event.target.classList.contains("delete-button")) {
     let card = event.target.closest("div.card");
-    card.remove();
+
     // delete card on backend
+    fetch(`${URL}/${card.dataset.id}`, { method: "DELETE" })
+      .then((response) => response.json())
+      .then(() => card.remove());
   } else if (event.target.matches("button.like-button")) {
     let card = event.target.closest("div.card");
     let likesNumSpan = card.querySelector("p.react-count span");
     const currLikes = parseInt(likesNumSpan.textContent);
     const newLikes = currLikes + 1;
+
+    // Optimistic rendering
+    // Replace the content of the DOM node that holds the likes with new value
+    likesNumSpan.textContent = newLikes;
+
     // update card on backend
+    fetch(`${URL}/${card.dataset.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ likes: newLikes }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log);
   }
 });
 

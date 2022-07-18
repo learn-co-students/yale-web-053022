@@ -1,0 +1,12 @@
+<h1>A particular user's page</h1>
+<ol>
+  <li>Name: <%= @user.name %></li>
+  <li>Age: <%= @user.age %></li>
+</ol>
+
+<h1>My Recipes:</h1>
+<ul>
+  <% @user.recipes.each do |recipe| %>
+    <li><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></li>
+  <% end %> 
+</ul>

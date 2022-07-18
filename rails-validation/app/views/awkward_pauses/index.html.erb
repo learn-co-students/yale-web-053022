@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Awkward pauses</h1>
+
+<div id="awkward_pauses">
+  <% @awkward_pauses.each do |awkward_pause| %>
+    <%= render awkward_pause %>
+    <p>
+      <%= link_to "Show this awkward pause", awkward_pause %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New awkward pause", new_awkward_pause_path %>

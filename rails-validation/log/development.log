@@ -1,0 +1,986 @@
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAwkwardPauses (20220628181040)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "awkward_pauses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar, "topic" varchar, "minutes" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220628181040"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-06-28 18:18:15.134823"], ["updated_at", "2022-06-28 18:18:15.134823"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.7ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Warsaw"], ["topic", "Agricultural Science"], ["minutes", 2], ["created_at", "2022-06-28 18:18:23.808433"], ["updated_at", "2022-06-28 18:18:23.808433"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAwkwardPause Load (0.1ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Destroy (0.5ms)[0m  [1m[31mDELETE FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.7ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Harare"], ["topic", "Pedagogy"], ["minutes", 1], ["created_at", "2022-06-28 18:18:50.043615"], ["updated_at", "2022-06-28 18:18:50.043615"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Harare"], ["topic", "Engineering"], ["minutes", 6], ["created_at", "2022-06-28 18:18:50.048245"], ["updated_at", "2022-06-28 18:18:50.048245"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Bern"], ["topic", "Mathematics"], ["minutes", 5], ["created_at", "2022-06-28 18:18:50.052020"], ["updated_at", "2022-06-28 18:18:50.052020"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.4ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Rome"], ["topic", "Pedagogy"], ["minutes", 8], ["created_at", "2022-06-28 18:18:50.055711"], ["updated_at", "2022-06-28 18:18:50.055711"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.4ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Addis Ababa"], ["topic", "Human Geography"], ["minutes", 7], ["created_at", "2022-06-28 18:18:50.058941"], ["updated_at", "2022-06-28 18:18:50.058941"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.4ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Dushanbe"], ["topic", "Law"], ["minutes", 2], ["created_at", "2022-06-28 18:18:50.062115"], ["updated_at", "2022-06-28 18:18:50.062115"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.4ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Sarajevo"], ["topic", "Public Policy"], ["minutes", 3], ["created_at", "2022-06-28 18:18:50.065222"], ["updated_at", "2022-06-28 18:18:50.065222"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Mbabane"], ["topic", "International Development"], ["minutes", 1], ["created_at", "2022-06-28 18:18:50.068869"], ["updated_at", "2022-06-28 18:18:50.068869"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Ulaanbaatar"], ["topic", "Business Administration"], ["minutes", 2], ["created_at", "2022-06-28 18:18:50.072322"], ["updated_at", "2022-06-28 18:18:50.072322"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Ljubljana"], ["topic", "Mathematics"], ["minutes", 2], ["created_at", "2022-06-28 18:18:50.075595"], ["updated_at", "2022-06-28 18:18:50.075595"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Port-Vila"], ["topic", "Law"], ["minutes", 6], ["created_at", "2022-06-28 18:18:50.079104"], ["updated_at", "2022-06-28 18:18:50.079104"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.4ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Juba"], ["topic", "Economics"], ["minutes", 3], ["created_at", "2022-06-28 18:18:50.082540"], ["updated_at", "2022-06-28 18:18:50.082540"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Monaco"], ["topic", "Materials Science"], ["minutes", 2], ["created_at", "2022-06-28 18:18:50.086205"], ["updated_at", "2022-06-28 18:18:50.086205"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Manila"], ["topic", "Sociology"], ["minutes", 10], ["created_at", "2022-06-28 18:18:50.089414"], ["updated_at", "2022-06-28 18:18:50.089414"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Saint John's"], ["topic", "Marketing"], ["minutes", 2], ["created_at", "2022-06-28 18:18:50.093350"], ["updated_at", "2022-06-28 18:18:50.093350"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.6ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Thimphu"], ["topic", "Earth Science"], ["minutes", 2], ["created_at", "2022-06-28 18:18:50.096690"], ["updated_at", "2022-06-28 18:18:50.096690"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "San Marino"], ["topic", "Chemistry"], ["minutes", 6], ["created_at", "2022-06-28 18:18:50.099964"], ["updated_at", "2022-06-28 18:18:50.099964"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Accra"], ["topic", "Business Administration"], ["minutes", 7], ["created_at", "2022-06-28 18:18:50.103291"], ["updated_at", "2022-06-28 18:18:50.103291"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.6ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Tashkent"], ["topic", "Biology"], ["minutes", 6], ["created_at", "2022-06-28 18:18:50.106610"], ["updated_at", "2022-06-28 18:18:50.106610"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAwkwardPause Create (0.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "Tripoli"], ["topic", "Medicine"], ["minutes", 3], ["created_at", "2022-06-28 18:18:50.110224"], ["updated_at", "2022-06-28 18:18:50.110224"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-06-28 14:18:58 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.5ms | Allocations: 683)
+Completed 200 OK in 32ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 6564)
+
+
+Started GET "/" for 127.0.0.1 at 2022-06-28 14:19:11 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 368)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1129)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2022-06-28 14:19:20 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3/lib/rails/templates/layouts/application.html.erb
+  Rendering /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/actionpack-7.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [38 times] (Duration: 9.4ms | Allocations: 4658)
+  Rendered /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/actionpack-7.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 6.4ms | Allocations: 1466)
+  Rendered /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 21.0ms | Allocations: 9980)
+  Rendered layout /Users/christopherkerlendson/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3/lib/rails/templates/layouts/application.html.erb (Duration: 23.0ms | Allocations: 10317)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 11182)
+
+
+Started GET "/awkward_pauses" for ::1 at 2022-06-28 14:19:34 -0400
+Processing by AwkwardPausesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/index.html.erb within layouts/application
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses"[0m
+  ↳ app/views/awkward_pauses/index.html.erb:6
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.9ms | Allocations: 236)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/index.html.erb within layouts/application (Duration: 22.0ms | Allocations: 9063)
+  Rendered layout layouts/application.html.erb (Duration: 271.6ms | Allocations: 110621)
+Completed 200 OK in 276ms (Views: 272.5ms | ActiveRecord: 0.9ms | Allocations: 112041)
+
+
+Started GET "/awkward_pauses/6" for ::1 at 2022-06-28 14:19:49 -0400
+Processing by AwkwardPausesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:63:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3013)
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 5526)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:19:56 -0400
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 271.0ms | Allocations: 348540)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 272.0ms | Allocations: 348852)
+  Rendered layout layouts/application.html.erb (Duration: 275.0ms | Allocations: 351105)
+Completed 200 OK in 276ms (Views: 275.4ms | ActiveRecord: 0.0ms | Allocations: 351434)
+
+
+Started GET "/awkward_pauses/6" for ::1 at 2022-06-28 14:20:11 -0400
+Processing by AwkwardPausesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAwkwardPause Load (0.1ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:63:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 547)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2765)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 3476)
+
+
+Started GET "/awkward_pauses/6" for ::1 at 2022-06-28 14:21:13 -0400
+Processing by AwkwardPausesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAwkwardPause Load (0.1ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:63:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 2.1ms | Allocations: 190)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1007)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 3445)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.1ms | Allocations: 4839)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:21:25 -0400
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 2.7ms | Allocations: 1669)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1978)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4211)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4531)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:22:07 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"", "topic"=>"Marketing", "minutes"=>"3"}, "commit"=>"Create Awkward pause"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:27:in `block in create'
+  [1m[36mAwkwardPause Create (0.9ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", ""], ["topic", "Marketing"], ["minutes", 3], ["created_at", "2022-06-28 18:22:07.167137"], ["updated_at", "2022-06-28 18:22:07.167137"]]
+  ↳ app/controllers/awkward_pauses_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/awkward_pauses/22
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms | Allocations: 2722)
+
+
+Started GET "/awkward_pauses/22" for ::1 at 2022-06-28 14:22:07 -0400
+Processing by AwkwardPausesController#show as TURBO_STREAM
+  Parameters: {"id"=>"22"}
+  [1m[36mAwkwardPause Load (0.1ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:63:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 638)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2854)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 3607)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:24:40 -0400
+Processing by AwkwardPausesController#new as HTML
+Completed 500 Internal Server Error in 2ms (Allocations: 774)
+
+
+  
+SyntaxError (/Users/christopherkerlendson/Development/cc/yale/my-lectures/rails-validation/app/models/awkward_pause.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...validates :location, presence :true
+...                              ^
+):
+  
+app/models/awkward_pause.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/awkward_pause.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/awkward_pause.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/awkward_pauses_controller.rb:15:in `new'
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:26:09 -0400
+Processing by AwkwardPausesController#new as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:15:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 2.0ms | Allocations: 1286)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1384)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 15425)
+Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 0.7ms | Allocations: 18512)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:26:26 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"", "topic"=>"Marketing", "minutes"=>"30"}, "commit"=>"Create Awkward pause"}
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 2.9ms | Allocations: 2248)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2345)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4561)
+Completed 422 Unprocessable Entity in 9ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 5673)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:29:00 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"", "topic"=>"Marketing", "minutes"=>"30"}, "commit"=>"Create Awkward pause"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:24:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms | Allocations: 5587)
+
+
+  
+NameError (undefined local variable or method `byebug' for #<AwkwardPausesController:0x00000000017cf0>):
+  
+app/controllers/awkward_pauses_controller.rb:25:in `create'
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:29:48 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 264.7ms | Allocations: 348507)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 267.0ms | Allocations: 349024)
+  Rendered layout layouts/application.html.erb (Duration: 328.0ms | Allocations: 384612)
+Completed 200 OK in 348ms (Views: 331.9ms | ActiveRecord: 0.6ms | Allocations: 394728)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:29:51 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"", "topic"=>"", "minutes"=>""}, "commit"=>"Create Awkward pause"}
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 3.1ms | Allocations: 2255)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2366)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4662)
+Completed 422 Unprocessable Entity in 10551ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 71434)
+
+
+Started GET "/awkward_pauses" for ::1 at 2022-06-28 14:30:24 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AwkwardPausesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/index.html.erb within layouts/application
+  [1m[36mAwkwardPause Load (0.4ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses"[0m
+  ↳ app/views/awkward_pauses/index.html.erb:6
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.8ms | Allocations: 204)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 9397)
+  Rendered layout layouts/application.html.erb (Duration: 80.4ms | Allocations: 45038)
+Completed 200 OK in 94ms (Views: 82.9ms | ActiveRecord: 1.0ms | Allocations: 50383)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:30:28 -0400
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 266.8ms | Allocations: 348475)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 268.4ms | Allocations: 348790)
+  Rendered layout layouts/application.html.erb (Duration: 284.4ms | Allocations: 351043)
+Completed 200 OK in 286ms (Views: 285.0ms | ActiveRecord: 0.0ms | Allocations: 351385)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:30:33 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"", "topic"=>"", "minutes"=>""}, "commit"=>"Create Awkward pause"}
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 3.2ms | Allocations: 2186)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2287)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4623)
+Completed 422 Unprocessable Entity in 549461ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 59755)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:39:54 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"asdf", "topic"=>"asdf", "minutes"=>"10"}, "commit"=>"Create Awkward pause"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:29:in `create'
+  [1m[36mAwkwardPause Create (7.5ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "asdf"], ["topic", "asdf"], ["minutes", 10], ["created_at", "2022-06-28 18:40:02.255043"], ["updated_at", "2022-06-28 18:40:02.255043"]]
+  ↳ app/controllers/awkward_pauses_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:29:in `create'
+Redirected to http://localhost:3000/awkward_pauses/23
+Completed 500 Internal Server Error in 123843ms (ActiveRecord: 10.7ms | Allocations: 249177)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `block in run_callbacks'
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:42:25 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 261.0ms | Allocations: 348519)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 262.9ms | Allocations: 349036)
+  Rendered layout layouts/application.html.erb (Duration: 329.7ms | Allocations: 384819)
+Completed 200 OK in 352ms (Views: 334.0ms | ActiveRecord: 0.6ms | Allocations: 394934)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:42:29 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"asdfa", "topic"=>"sdf", "minutes"=>"10"}, "commit"=>"Create Awkward pause"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mAwkwardPause Create (0.7ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "asdfa"], ["topic", "sdf"], ["minutes", 10], ["created_at", "2022-06-28 18:42:29.657036"], ["updated_at", "2022-06-28 18:42:29.657036"]]
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+Redirected to http://localhost:3000/awkward_pauses/24
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms | Allocations: 2796)
+
+
+Started GET "/awkward_pauses/24" for ::1 at 2022-06-28 14:42:29 -0400
+Processing by AwkwardPausesController#show as TURBO_STREAM
+  Parameters: {"id"=>"24"}
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:72:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.7ms | Allocations: 196)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 8027.6ms | Allocations: 55584)
+  Rendered layout layouts/application.html.erb (Duration: 8031.5ms | Allocations: 57812)
+Completed 200 OK in 8037ms (Views: 8032.1ms | ActiveRecord: 0.2ms | Allocations: 60351)
+
+
+Started DELETE "/awkward_pauses/24" for ::1 at 2022-06-28 14:42:53 -0400
+Processing by AwkwardPausesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"24"}
+  [1m[36mAwkwardPause Load (0.1ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:72:in `set_awkward_pause'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:61:in `destroy'
+  [1m[36mAwkwardPause Destroy (0.6ms)[0m  [1m[31mDELETE FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ?[0m  [["id", 24]]
+  ↳ app/controllers/awkward_pauses_controller.rb:61:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:61:in `destroy'
+Redirected to http://localhost:3000/awkward_pauses
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms | Allocations: 2259)
+
+
+Started GET "/awkward_pauses" for ::1 at 2022-06-28 14:42:53 -0400
+Processing by AwkwardPausesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/index.html.erb within layouts/application
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses"[0m
+  ↳ app/views/awkward_pauses/index.html.erb:6
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 3984)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 6222)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.2ms | Allocations: 6573)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:42:55 -0400
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 2.0ms | Allocations: 1279)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1376)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3603)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3879)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:43:00 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"asdf", "topic"=>"asfdqwer", "minutes"=>"10"}, "commit"=>"Create Awkward pause"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mAwkwardPause Create (0.7ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "asdf"], ["topic", "asfdqwer"], ["minutes", 10], ["created_at", "2022-06-28 18:43:00.798706"], ["updated_at", "2022-06-28 18:43:00.798706"]]
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+Redirected to http://localhost:3000/awkward_pauses/25
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms | Allocations: 2049)
+
+
+Started GET "/awkward_pauses/25" for ::1 at 2022-06-28 14:43:00 -0400
+Processing by AwkwardPausesController#show as TURBO_STREAM
+  Parameters: {"id"=>"25"}
+  [1m[36mAwkwardPause Load (0.1ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:72:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 24714.2ms | Allocations: 7440)
+  Rendered layout layouts/application.html.erb (Duration: 24717.8ms | Allocations: 9659)
+Completed 200 OK in 24720ms (Views: 24718.3ms | ActiveRecord: 0.1ms | Allocations: 10366)
+
+
+Started GET "/awkward_pauses" for ::1 at 2022-06-28 14:43:31 -0400
+Processing by AwkwardPausesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/index.html.erb within layouts/application
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses"[0m
+  ↳ app/views/awkward_pauses/index.html.erb:6
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 4335)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 6780)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.2ms | Allocations: 7729)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:43:34 -0400
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 3.0ms | Allocations: 1663)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1972)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4205)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 4528)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:43:39 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"asdf", "topic"=>"asdf", "minutes"=>"10"}, "commit"=>"Create Awkward pause"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mAwkwardPause Create (0.6ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "asdf"], ["topic", "asdf"], ["minutes", 10], ["created_at", "2022-06-28 18:43:39.022877"], ["updated_at", "2022-06-28 18:43:39.022877"]]
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+Redirected to http://localhost:3000/awkward_pauses/26
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms | Allocations: 2037)
+
+
+Started GET "/awkward_pauses/26" for ::1 at 2022-06-28 14:43:39 -0400
+Processing by AwkwardPausesController#show as TURBO_STREAM
+  Parameters: {"id"=>"26"}
+  [1m[36mAwkwardPause Load (0.1ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:72:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 823)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3048)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 3881)
+
+
+Started DELETE "/awkward_pauses/26" for ::1 at 2022-06-28 14:43:54 -0400
+Processing by AwkwardPausesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"26"}
+  [1m[36mAwkwardPause Load (0.1ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:72:in `set_awkward_pause'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:61:in `destroy'
+  [1m[36mAwkwardPause Destroy (0.6ms)[0m  [1m[31mDELETE FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ?[0m  [["id", 26]]
+  ↳ app/controllers/awkward_pauses_controller.rb:61:in `destroy'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:61:in `destroy'
+Redirected to http://localhost:3000/awkward_pauses
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms | Allocations: 2212)
+
+
+Started GET "/awkward_pauses" for ::1 at 2022-06-28 14:43:54 -0400
+Processing by AwkwardPausesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/index.html.erb within layouts/application
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses"[0m
+  ↳ app/views/awkward_pauses/index.html.erb:6
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.8ms | Allocations: 188)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 4386)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 6831)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.2ms | Allocations: 7832)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:43:56 -0400
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 3.5ms | Allocations: 1663)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1973)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4206)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 4529)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:44:00 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"asdf", "topic"=>"asf", "minutes"=>"10"}, "commit"=>"Create Awkward pause"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mAwkwardPause Create (0.6ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "asdf"], ["topic", "asf"], ["minutes", 10], ["created_at", "2022-06-28 18:44:00.891118"], ["updated_at", "2022-06-28 18:44:00.891118"]]
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+Redirected to http://localhost:3000/awkward_pauses/27
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms | Allocations: 2028)
+
+
+Started GET "/awkward_pauses/27" for ::1 at 2022-06-28 14:44:00 -0400
+Processing by AwkwardPausesController#show as TURBO_STREAM
+  Parameters: {"id"=>"27"}
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:72:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 779)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3004)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 3790)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:44:27 -0400
+Processing by AwkwardPausesController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:15:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 2.5ms | Allocations: 1294)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1392)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 15330)
+Completed 200 OK in 29ms (Views: 20.3ms | ActiveRecord: 1.0ms | Allocations: 18387)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:44:33 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"asdf", "topic"=>"asdf", "minutes"=>"1"}, "commit"=>"Create Awkward pause"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mAwkwardPause Create (0.8ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "asdf"], ["topic", "asdf"], ["minutes", 1], ["created_at", "2022-06-28 18:44:33.930513"], ["updated_at", "2022-06-28 18:44:33.930513"]]
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+Redirected to http://localhost:3000/awkward_pauses/28
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms | Allocations: 4057)
+
+
+Started GET "/awkward_pauses/28" for ::1 at 2022-06-28 14:44:33 -0400
+Processing by AwkwardPausesController#show as TURBO_STREAM
+  Parameters: {"id"=>"28"}
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:73:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 624)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2840)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 4133)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:44:46 -0400
+Processing by AwkwardPausesController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:15:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 2.1ms | Allocations: 1294)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1392)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 15330)
+Completed 200 OK in 28ms (Views: 20.6ms | ActiveRecord: 0.9ms | Allocations: 18327)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:44:51 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"asdf", "topic"=>"asdf", "minutes"=>"10"}, "commit"=>"Create Awkward pause"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mAwkwardPause Create (0.7ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "asdf"], ["topic", "asdf"], ["minutes", 10], ["created_at", "2022-06-28 18:44:51.328377"], ["updated_at", "2022-06-28 18:44:51.328377"]]
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:28:in `create'
+Redirected to http://localhost:3000/awkward_pauses/29
+Completed 302 Found in 49101ms (ActiveRecord: 2.7ms | Allocations: 35591)
+
+
+Started GET "/awkward_pauses/29" for ::1 at 2022-06-28 14:45:40 -0400
+Processing by AwkwardPausesController#show as TURBO_STREAM
+  Parameters: {"id"=>"29"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:74:in `set_awkward_pause'
+  [1m[36mAwkwardPause Load (0.1ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:74:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 467)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 14397)
+Completed 200 OK in 78457ms (Views: 17.8ms | ActiveRecord: 0.9ms | Allocations: 20840)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:47:19 -0400
+Processing by AwkwardPausesController#new as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 777)
+
+
+  
+SyntaxError (/Users/christopherkerlendson/Development/cc/yale/my-lectures/rails-validation/app/models/awkward_pause.rb:3: syntax error, unexpected ':', expecting `end'
+  validates :  
+            ^
+):
+  
+app/models/awkward_pause.rb:3: syntax error, unexpected ':', expecting `end'
+app/models/awkward_pause.rb:3: syntax error, unexpected ':', expecting `end'
+app/models/awkward_pause.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/awkward_pauses_controller.rb:15:in `new'
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:47:24 -0400
+Processing by AwkwardPausesController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:15:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 2.2ms | Allocations: 1290)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1388)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 15420)
+Completed 200 OK in 27ms (Views: 18.7ms | ActiveRecord: 0.7ms | Allocations: 18458)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."location" = ? LIMIT ?[0m  [["location", "NY"], ["LIMIT", 1]]
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 14:59:00 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 262.5ms | Allocations: 348381)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 264.3ms | Allocations: 348898)
+  Rendered layout layouts/application.html.erb (Duration: 325.8ms | Allocations: 384586)
+Completed 200 OK in 349ms (Views: 329.6ms | ActiveRecord: 0.5ms | Allocations: 394828)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 14:59:11 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"", "topic"=>"", "minutes"=>"1"}, "commit"=>"Create Awkward pause"}
+No template found for AwkwardPausesController#create, rendering head :no_content
+Completed 204 No Content in 121491ms (ActiveRecord: 0.0ms | Allocations: 54395)
+
+
+Started GET "/rails/info/routes?path=new" for 127.0.0.1 at 2022-06-28 15:01:13 -0400
+Started GET "/rails/info/routes?path=new" for 127.0.0.1 at 2022-06-28 15:01:13 -0400
+Started GET "/rails/info/routes?path=new" for 127.0.0.1 at 2022-06-28 15:01:13 -0400
+Processing by Rails::InfoController#routes as */*
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"new"}
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"new"}
+  Parameters: {"path"=>"new"}
+Completed 200 OK in 3ms (Views: 0.2ms | Allocations: 2092)
+
+
+Completed 200 OK in 4ms (Views: 0.1ms | Allocations: 2965)
+
+
+Completed 200 OK in 4ms (Views: 0.1ms | Allocations: 3667)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 15:01:31 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"s", "topic"=>"", "minutes"=>"1"}, "commit"=>"Create Awkward pause"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:24:in `create'
+Redirected to http://localhost:3000/awkward_pauses/new
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms | Allocations: 3554)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 15:01:31 -0400
+Processing by AwkwardPausesController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 2.8ms | Allocations: 1692)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2056)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 16206)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 17182)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 15:03:46 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"", "topic"=>"", "minutes"=>""}, "commit"=>"Create Awkward pause"}
+Redirected to http://localhost:3000/awkward_pauses/new
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 2226)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 15:03:46 -0400
+Processing by AwkwardPausesController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3946)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4022)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 4975)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>New awkward pause</h1>
+
+<p style="color: red">
+  <% if flash[:error] %>
+    <% flash[:error].each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</p>
+
+<%= render "form", awkward_pause: @awkward_pause %>
+
+<br>
+
+<div>
+  <%= link_to "Back to awkward pauses", awkward_pauses_path %>
+</div>
+
+):
+1:    <h1>New awkward pause</h1>
+2:    
+3:    <p style="color: red">
+4:      <% if flash[:error] %>
+5:        <% flash[:error].each do |error| %>
+6:        <li><%= error %></li>
+7:      <% end %>
+8:    </p>
+9:    
+10:    <%= render "form", awkward_pause: @awkward_pause %>
+11:    
+12:    <br>
+13:    
+14:    <div>
+15:      <%= link_to "Back to awkward pauses", awkward_pauses_path %>
+16:    </div>
+  
+app/views/awkward_pauses/new.html.erb:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/awkward_pauses/new.html.erb:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/awkward_pauses/new.html.erb:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/awkward_pauses/new.html.erb:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/awkward_pauses/new.html.erb:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/awkward_pauses/new.html.erb:19: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 15:04:14 -0400
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 2.8ms | Allocations: 1518)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2102)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4561)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 5484)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 15:04:40 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"asdf", "topic"=>"asdf", "minutes"=>"10"}, "commit"=>"Create Awkward pause"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:29:in `create'
+  [1m[36mAwkwardPause Create (0.8ms)[0m  [1m[32mINSERT INTO "awkward_pauses" ("location", "topic", "minutes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["location", "asdf"], ["topic", "asdf"], ["minutes", 10], ["created_at", "2022-06-28 19:05:17.515494"], ["updated_at", "2022-06-28 19:05:17.515494"]]
+  ↳ app/controllers/awkward_pauses_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:29:in `create'
+Redirected to http://localhost:3000/awkward_pauses/30
+Completed 302 Found in 36689ms (ActiveRecord: 2.5ms | Allocations: 7548)
+
+
+Started GET "/awkward_pauses/30" for ::1 at 2022-06-28 15:05:17 -0400
+Processing by AwkwardPausesController#show as TURBO_STREAM
+  Parameters: {"id"=>"30"}
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:74:in `set_awkward_pause'
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/show.html.erb within layouts/application
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.7ms | Allocations: 196)
+  Rendered awkward_pauses/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1279)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 15516)
+Completed 200 OK in 43ms (Views: 27.3ms | ActiveRecord: 0.2ms | Allocations: 20436)
+
+
+Started DELETE "/awkward_pauses/30" for ::1 at 2022-06-28 15:05:20 -0400
+Processing by AwkwardPausesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"30"}
+  [1m[36mAwkwardPause Load (0.2ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/awkward_pauses_controller.rb:74:in `set_awkward_pause'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:63:in `destroy'
+  [1m[36mAwkwardPause Destroy (0.6ms)[0m  [1m[31mDELETE FROM "awkward_pauses" WHERE "awkward_pauses"."id" = ?[0m  [["id", 30]]
+  ↳ app/controllers/awkward_pauses_controller.rb:63:in `destroy'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awkward_pauses_controller.rb:63:in `destroy'
+Redirected to http://localhost:3000/awkward_pauses
+Completed 302 Found in 8ms (ActiveRecord: 2.7ms | Allocations: 2236)
+
+
+Started GET "/awkward_pauses" for ::1 at 2022-06-28 15:05:20 -0400
+Processing by AwkwardPausesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/index.html.erb within layouts/application
+  [1m[36mAwkwardPause Load (0.4ms)[0m  [1m[34mSELECT "awkward_pauses".* FROM "awkward_pauses"[0m
+  ↳ app/views/awkward_pauses/index.html.erb:6
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/_awkward_pause.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered awkward_pauses/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 4530)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 6781)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.4ms | Allocations: 7131)
+
+
+Started GET "/awkward_pauses/new" for ::1 at 2022-06-28 15:05:22 -0400
+Processing by AwkwardPausesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering awkward_pauses/new.html.erb within layouts/application
+  Rendered awkward_pauses/_form.html.erb (Duration: 3.7ms | Allocations: 1636)
+  Rendered awkward_pauses/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2187)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4420)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4743)
+
+
+Started POST "/awkward_pauses" for ::1 at 2022-06-28 15:05:26 -0400
+Processing by AwkwardPausesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "awkward_pause"=>{"location"=>"asdf", "topic"=>"asdf", "minutes"=>"10"}, "commit"=>"Create Awkward pause"}
+Completed 500 Internal Server Error in 1746689ms (ActiveRecord: 0.0ms | Allocations: 16697)
+
+
+  
+Errno::EIO (Input/output error - read):
+  
+app/controllers/awkward_pauses_controller.rb:28:in `create'

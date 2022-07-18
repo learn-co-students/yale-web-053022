@@ -1,0 +1,10 @@
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= render @awkward_pause %>
+
+<div>
+  <%= link_to "Edit this awkward pause", edit_awkward_pause_path(@awkward_pause) %> |
+  <%= link_to "Back to awkward pauses", awkward_pauses_path %>
+
+  <%= button_to "Destroy this awkward pause", @awkward_pause, method: :delete %>
+</div>

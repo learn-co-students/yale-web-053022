@@ -1,0 +1,17 @@
+<h1>New awkward pause</h1>
+
+<p style="color: red">
+  <% if flash[:error] %>
+    <% flash[:error].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  <% end %>
+</p>
+
+<%= render "form", awkward_pause: @awkward_pause %>
+
+<br>
+
+<div>
+  <%= link_to "Back to awkward pauses", awkward_pauses_path %>
+</div>
